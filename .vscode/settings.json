@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with cl.exe",
+            "type": "shell",
+            "command": "cl.exe",
+            "args": [
+                "/EHsc",            // Enable C++ exceptions
+                "/Zi",              // Debug info
+                "/Fe:", "${fileDirname}\\${fileBasenameNoExtension}.exe", // Output file
+                "${file}"           // Input file
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$msCompile"]
+        }
+    ]
+}
